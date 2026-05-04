@@ -16,24 +16,23 @@
 html,body,#root{height:100%}
 body{background:var(--bg);color:var(--text);font-family:"Raleway",sans-serif;font-size:14px;line-height:1.6;overflow-x:hidden}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-.cinzel{font-family:"Cinzel",serif}
 .app-shell{display:flex;height:100vh;overflow:hidden}
 .sidebar{width:240px;min-width:240px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column}
-.sidebar-logo{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center}
-.sidebar-logo img{width:150px;filter:invert(1) brightness(0.85)}
-.sidebar-section-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:20px 24px 8px;font-weight:600}
-.nav-item{display:flex;align-items:center;gap:10px;padding:10px 24px;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;border-left:2px solid transparent;user-select:none}
+.sidebar-logo{padding:24px;border-bottom:1px solid var(--border);text-align:center}
+.logo-ddp{font-family:"Cinzel",serif;font-size:28px;font-weight:900;color:var(--gold);letter-spacing:.15em;display:block}
+.logo-sub{font-family:"Cinzel",serif;font-size:9px;font-weight:600;color:var(--muted);letter-spacing:.3em;text-transform:uppercase;margin-top:2px;display:block}
+.sidebar-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:20px 24px 8px;font-weight:600}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 24px;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;border-left:2px solid transparent}
 .nav-item:hover{color:var(--text);background:rgba(255,255,255,0.03)}
-.nav-item.active{color:var(--text);border-left-color:var(--gold);background:rgba(201,168,76,0.06)}
-.nav-item .icon{width:16px;text-align:center}
+.nav-item-active{color:var(--text) !important;border-left-color:var(--gold) !important;background:rgba(201,168,76,0.06) !important}
 .sidebar-footer{margin-top:auto;padding:20px 24px;border-top:1px solid var(--border)}
-.member-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
 .badge-beginner{background:var(--green-dim);color:var(--green);border:1px solid rgba(34,197,94,0.3)}
 .badge-advanced{background:var(--blue-dim);color:var(--blue);border:1px solid rgba(59,130,246,0.3)}
 .badge-admin{background:rgba(201,168,76,0.12);color:var(--gold);border:1px solid rgba(201,168,76,0.3)}
 .badge-pending{background:rgba(239,68,68,0.1);color:var(--danger);border:1px solid rgba(239,68,68,0.3)}
-.user-name{font-size:13px;font-weight:600;color:var(--text)}
-.user-email{font-size:11px;color:var(--muted)}
+.uname{font-size:13px;font-weight:600;color:var(--text)}
+.uemail{font-size:11px;color:var(--muted)}
 .btn-logout{margin-top:12px;width:100%;padding:8px;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:var(--radius);font-family:"Raleway",sans-serif;font-size:12px;cursor:pointer;transition:all .2s}
 .btn-logout:hover{border-color:var(--danger);color:var(--danger)}
 .main{flex:1;overflow-y:auto;display:flex;flex-direction:column}
@@ -44,127 +43,120 @@ body{background:var(--bg);color:var(--text);font-family:"Raleway",sans-serif;fon
 .auth-card{width:100%;max-width:440px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:48px 40px;position:relative}
 .auth-card::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .auth-logo{text-align:center;margin-bottom:32px}
-.auth-logo img{width:170px;filter:invert(1) brightness(0.9);margin-bottom:8px}
-.auth-logo p{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
-.auth-tabs{display:flex;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:28px;overflow:hidden}
-.auth-tab{flex:1;padding:10px;background:transparent;border:none;color:var(--muted);font-family:"Raleway",sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s}
-.auth-tab.active{background:rgba(201,168,76,0.1);color:var(--gold)}
-.form-group{margin-bottom:16px}
-.form-label{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.form-input{width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:"Raleway",sans-serif;font-size:13px;outline:none;transition:border-color .2s}
-.form-input:focus{border-color:var(--gold)}
-.form-select{width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:"Raleway",sans-serif;font-size:13px;outline:none;cursor:pointer}
-.form-select option{background:var(--bg3)}
-.btn-primary{width:100%;padding:13px;background:var(--gold);border:none;border-radius:var(--radius);color:#07090F;font-family:"Cinzel",serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .2s;margin-top:8px}
-.btn-primary:hover{filter:brightness(1.1)}
-.btn-primary:disabled{opacity:.5;cursor:not-allowed}
-.btn-sm{padding:6px 14px;border:none;border-radius:var(--radius);font-family:"Raleway",sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .2s}
-.btn-approve{background:var(--green-dim);color:var(--green);border:1px solid rgba(34,197,94,0.3)}
-.btn-approve:hover{background:var(--green);color:#07090F}
-.btn-decline{background:rgba(239,68,68,0.1);color:var(--danger);border:1px solid rgba(239,68,68,0.3)}
-.btn-decline:hover{background:var(--danger);color:#fff}
-.btn-edit{background:rgba(201,168,76,0.1);color:var(--gold);border:1px solid rgba(201,168,76,0.3)}
-.btn-edit:hover{background:var(--gold);color:#07090F}
-.btn-delete{background:rgba(239,68,68,0.08);color:var(--danger);border:1px solid rgba(239,68,68,0.2)}
-.btn-delete:hover{background:var(--danger);color:#fff}
-.btn-add{padding:9px 18px;background:var(--gold);border:none;border-radius:var(--radius);color:#07090F;font-family:"Raleway",sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
-.btn-add:hover{filter:brightness(1.1)}
+.auth-logo .logo-ddp{font-size:36px}
+.auth-logo p{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+.tab-row{display:flex;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:28px;overflow:hidden}
+.tab-btn{flex:1;padding:10px;background:transparent;border:none;color:var(--muted);font-family:"Raleway",sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.tab-btn:hover{color:var(--text)}
+.tab-btn-active{background:rgba(201,168,76,0.1) !important;color:var(--gold) !important}
+.fg{margin-bottom:16px}
+.fl{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.fi{width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:"Raleway",sans-serif;font-size:13px;outline:none;transition:border-color .2s}
+.fi:focus{border-color:var(--gold)}
+.fsel{width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:"Raleway",sans-serif;font-size:13px;outline:none;cursor:pointer}
+.fsel option{background:var(--bg3)}
+.fta{width:100%;padding:14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:"Raleway",sans-serif;font-size:13px;line-height:1.7;resize:vertical;outline:none;transition:border-color .2s}
+.fta:focus{border-color:var(--gold)}
+.btn-gold{width:100%;padding:13px;background:var(--gold);border:none;border-radius:var(--radius);color:#07090F;font-family:"Cinzel",serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .2s;margin-top:8px}
+.btn-gold:hover{filter:brightness(1.1)}
+.btn-gold:disabled{opacity:.5;cursor:not-allowed}
+.bsm{padding:6px 14px;border:none;border-radius:var(--radius);font-family:"Raleway",sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .2s}
+.b-approve{background:var(--green-dim);color:var(--green);border:1px solid rgba(34,197,94,0.3)}
+.b-approve:hover{background:var(--green);color:#07090F}
+.b-decline{background:rgba(239,68,68,0.1);color:var(--danger);border:1px solid rgba(239,68,68,0.3)}
+.b-decline:hover{background:var(--danger);color:#fff}
+.b-edit{background:rgba(201,168,76,0.1);color:var(--gold);border:1px solid rgba(201,168,76,0.3)}
+.b-edit:hover{background:var(--gold);color:#07090F}
+.b-del{background:rgba(239,68,68,0.08);color:var(--danger);border:1px solid rgba(239,68,68,0.2)}
+.b-del:hover{background:var(--danger);color:#fff}
+.b-add{padding:9px 18px;background:var(--gold);border:none;border-radius:var(--radius);color:#07090F;font-family:"Raleway",sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.b-add:hover{filter:brightness(1.1)}
 .alert{padding:12px 14px;border-radius:var(--radius);font-size:12px;margin-bottom:16px}
-.alert-error{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#FCA5A5}
-.alert-success{background:var(--green-dim);border:1px solid rgba(34,197,94,0.3);color:#86EFAC}
+.alert-err{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#FCA5A5}
+.alert-ok{background:var(--green-dim);border:1px solid rgba(34,197,94,0.3);color:#86EFAC}
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:24px}
 .card-title{font-family:"Cinzel",serif;font-size:13px;font-weight:600;letter-spacing:.08em;margin-bottom:20px}
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:28px}
-.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px 24px}
-.stat-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.stat-value{font-family:"Cinzel",serif;font-size:26px;font-weight:700}
-.table-wrap{overflow-x:auto}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-bottom:28px}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px 20px}
+.stat-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.stat-val{font-family:"Cinzel",serif;font-size:26px;font-weight:700}
+.tw{overflow-x:auto}
 table{width:100%;border-collapse:collapse}
 th{text-align:left;padding:10px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border)}
-td{padding:12px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle}
+td{padding:11px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,255,255,0.02)}
-.admin-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:28px;flex-wrap:wrap}
-.admin-tab{padding:12px 20px;background:transparent;border:none;color:var(--muted);font-family:"Raleway",sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;border-bottom:2px solid transparent;margin-bottom:-1px}
-.admin-tab:hover{color:var(--text)}
-.admin-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
-.courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.atabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:28px;flex-wrap:wrap}
+.atab{padding:12px 20px;background:transparent;border:none;color:var(--muted);font-family:"Raleway",sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;border-bottom:2px solid transparent;margin-bottom:-1px}
+.atab:hover{color:var(--text)}
+.atab-active{color:var(--gold) !important;border-bottom-color:var(--gold) !important}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
 .course-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s}
 .course-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-2px)}
-.course-thumb{height:120px;display:flex;align-items:center;justify-content:center;font-size:36px;position:relative}
-.course-thumb-beginner{background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(34,197,94,0.05))}
-.course-thumb-advanced{background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05))}
-.course-body{padding:16px 18px}
-.course-title{font-family:"Cinzel",serif;font-size:13px;font-weight:600;margin-bottom:4px}
-.course-meta{font-size:11px;color:var(--muted)}
-.section-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
-.section-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;background:var(--bg3);transition:background .2s}
-.section-header:hover{background:rgba(255,255,255,0.03)}
-.section-title{font-family:"Cinzel",serif;font-size:12px;font-weight:600;letter-spacing:.05em}
-.section-chevron{color:var(--muted);transition:transform .2s;font-size:12px}
-.section-chevron.open{transform:rotate(180deg)}
-.section-lessons{border-top:1px solid var(--border)}
-.lesson-item{display:flex;align-items:center;gap:12px;padding:12px 18px;cursor:pointer;transition:background .2s;border-bottom:1px solid rgba(255,255,255,0.03)}
-.lesson-item:last-child{border-bottom:none}
-.lesson-item:hover{background:rgba(255,255,255,0.03)}
-.lesson-item.active{background:rgba(201,168,76,0.06)}
+.cthumb{height:110px;display:flex;align-items:center;justify-content:center;font-size:34px;position:relative}
+.cthumb-b{background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(34,197,94,0.05))}
+.cthumb-a{background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05))}
+.cbody{padding:14px 16px}
+.ctitle{font-family:"Cinzel",serif;font-size:13px;font-weight:600;margin-bottom:4px}
+.cmeta{font-size:11px;color:var(--muted)}
+.sec-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+.sec-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;background:var(--bg3);transition:background .2s}
+.sec-hdr:hover{background:rgba(255,255,255,0.03)}
+.sec-title{font-family:"Cinzel",serif;font-size:12px;font-weight:600;letter-spacing:.05em}
+.chev{color:var(--muted);transition:transform .2s;font-size:11px;display:inline-block}
+.chev-open{transform:rotate(180deg)}
+.sec-lessons{border-top:1px solid var(--border)}
+.lesson{display:flex;align-items:center;gap:12px;padding:11px 18px;cursor:pointer;transition:background .2s;border-bottom:1px solid rgba(255,255,255,0.03)}
+.lesson:last-child{border-bottom:none}
+.lesson:hover{background:rgba(255,255,255,0.03)}
+.lesson-active{background:rgba(201,168,76,0.06) !important}
 .lesson-title{font-size:13px;flex:1}
-.lesson-duration{font-size:11px;color:var(--muted)}
-.video-area{background:#000;border-radius:10px;overflow:hidden;aspect-ratio:16/9;margin-bottom:20px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
-.video-area iframe{width:100%;height:100%;border:none}
-.video-placeholder{text-align:center;color:var(--muted)}
-.video-placeholder .big-icon{font-size:48px;margin-bottom:12px}
-.journal-textarea{width:100%;min-height:130px;padding:14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:"Raleway",sans-serif;font-size:13px;line-height:1.7;resize:vertical;outline:none;transition:border-color .2s}
-.journal-textarea:focus{border-color:var(--gold)}
-.journal-entry{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px}
-.journal-date{font-size:11px;color:var(--muted);margin-bottom:6px}
-.journal-text{font-size:13px;line-height:1.7;white-space:pre-wrap}
-.checklist-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;cursor:pointer;transition:all .2s}
-.checklist-item:hover{border-color:rgba(255,255,255,0.12)}
-.check-box{width:20px;height:20px;flex-shrink:0;border:1.5px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .2s}
-.check-box.checked{background:var(--green);border-color:var(--green);color:#07090F;font-weight:700}
-.check-text{font-size:13px;flex:1}
-.check-text.done{text-decoration:line-through;color:var(--muted)}
-.playbook-section{margin-bottom:28px}
-.playbook-section-title{font-family:"Cinzel",serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(201,168,76,0.2)}
-.playbook-rule{display:flex;gap:14px;padding:14px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px}
-.rule-num{font-family:"Cinzel",serif;font-size:11px;font-weight:700;color:var(--gold);opacity:.7;flex-shrink:0;width:20px}
-.rule-text{font-size:13px;line-height:1.6}
-.modal-overlay{position:fixed;inset:0;background:rgba(7,9,15,0.88);display:flex;align-items:center;justify-content:center;z-index:100;padding:24px;backdrop-filter:blur(4px)}
+.lesson-dur{font-size:11px;color:var(--muted)}
+.vid-area{background:#000;border-radius:10px;overflow:hidden;aspect-ratio:16/9;margin-bottom:20px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.vid-area iframe{width:100%;height:100%;border:none}
+.vid-ph{text-align:center;color:var(--muted)}
+.vid-ph-icon{font-size:44px;margin-bottom:10px}
+.jentry{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px}
+.jdate{font-size:11px;color:var(--muted);margin-bottom:6px}
+.jtext{font-size:13px;line-height:1.7;white-space:pre-wrap}
+.clitem{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;cursor:pointer;transition:all .2s}
+.clitem:hover{border-color:rgba(255,255,255,0.12)}
+.chkbox{width:20px;height:20px;flex-shrink:0;border:1.5px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .2s}
+.chkbox-on{background:var(--green);border-color:var(--green);color:#07090F;font-weight:700}
+.cltext{font-size:13px;flex:1}
+.cltext-done{text-decoration:line-through;color:var(--muted)}
+.pb-sec{margin-bottom:28px}
+.pb-hdr{font-family:"Cinzel",serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(201,168,76,0.2)}
+.pb-rule{display:flex;gap:14px;padding:14px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px}
+.pb-num{font-family:"Cinzel",serif;font-size:11px;font-weight:700;color:var(--gold);opacity:.7;flex-shrink:0;width:20px}
+.pb-text{font-size:13px;line-height:1.6}
+.modal-ov{position:fixed;inset:0;background:rgba(7,9,15,0.88);display:flex;align-items:center;justify-content:center;z-index:100;padding:24px;backdrop-filter:blur(4px)}
 .modal{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:32px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto}
 .modal-title{font-family:"Cinzel",serif;font-size:15px;font-weight:600;margin-bottom:24px;letter-spacing:.06em}
-.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:24px}
-.btn-cancel{padding:9px 18px;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:var(--radius);font-family:"Raleway",sans-serif;font-size:12px;cursor:pointer;transition:all .2s}
-.btn-cancel:hover{border-color:var(--text);color:var(--text)}
-.btn-save{padding:9px 18px;background:var(--gold);border:none;color:#07090F;border-radius:var(--radius);font-family:"Raleway",sans-serif;font-size:12px;font-weight:700;cursor:pointer}
-.pending-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);text-align:center;padding:24px}
-.pending-card{max-width:420px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:48px 40px}
-.pending-title{font-family:"Cinzel",serif;font-size:18px;font-weight:600;letter-spacing:.08em;margin:16px 0 12px}
-.pending-text{font-size:13px;color:var(--muted);line-height:1.7}
-.admin-login-page{min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
-.admin-login-page::before{content:"ADMIN";position:absolute;font-family:"Cinzel",serif;font-size:160px;font-weight:900;color:rgba(201,168,76,0.03);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;white-space:nowrap}
+.modal-acts{display:flex;gap:10px;justify-content:flex-end;margin-top:24px}
+.b-cancel{padding:9px 18px;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:var(--radius);font-family:"Raleway",sans-serif;font-size:12px;cursor:pointer}
+.b-cancel:hover{border-color:var(--text);color:var(--text)}
+.b-save{padding:9px 18px;background:var(--gold);border:none;color:#07090F;border-radius:var(--radius);font-family:"Raleway",sans-serif;font-size:12px;font-weight:700;cursor:pointer}
+.b-save:hover{filter:brightness(1.1)}
+.pend-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);text-align:center;padding:24px}
+.pend-card{max-width:420px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:48px 40px}
+.pend-title{font-family:"Cinzel",serif;font-size:18px;font-weight:600;letter-spacing:.08em;margin:16px 0 12px}
+.pend-text{font-size:13px;color:var(--muted);line-height:1.7}
+.admin-pg{min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px}
 .admin-card{width:100%;max-width:420px;background:var(--bg2);border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:48px 40px;position:relative}
 .admin-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border-radius:12px 12px 0 0}
-.admin-card-logo{text-align:center;margin-bottom:28px}
-.admin-card-logo img{width:150px;filter:invert(1) brightness(0.85);margin-bottom:16px}
-.admin-badge-header{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);color:var(--gold);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
-.creds-box{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:var(--radius);padding:16px 20px;margin-top:20px}
-.cred-line{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:12px}
-.cred-line:last-child{border-bottom:none}
-.cred-label{color:var(--muted)}
-.cred-val{color:var(--gold);font-weight:600;font-family:monospace}
-.text-logo{display:flex;flex-direction:column;align-items:center;line-height:1.1}
-.tl-ddp{font-family:"Cinzel",serif;font-size:32px;font-weight:900;color:var(--gold);letter-spacing:.15em}
-.tl-fx{font-family:"Cinzel",serif;font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.25em;text-transform:uppercase;margin-top:2px}
-.text-logo.large .tl-ddp{font-size:42px}
-.text-logo.large .tl-fx{font-size:12px}
-.text-logo.small .tl-ddp{font-size:20px}
-.text-logo.small .tl-fx{font-size:8px}
-.empty-state{text-align:center;padding:60px 24px;color:var(--muted)}
-.empty-icon{font-size:36px;margin-bottom:12px}
-.empty-text{font-size:13px}
+.admin-logo{text-align:center;margin-bottom:28px}
+.admin-logo .logo-ddp{font-size:32px}
+.admin-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);color:var(--gold);padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-top:10px}
+.creds{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:var(--radius);padding:16px 20px;margin-top:20px}
+.cred-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:12px}
+.cred-row:last-child{border-bottom:none}
+.cred-k{color:var(--muted)}
+.cred-v{color:var(--gold);font-weight:600;font-family:monospace}
 .two-col{display:grid;grid-template-columns:1fr 340px;gap:24px}
-.action-row{display:flex;gap:6px;flex-wrap:wrap}
+.act-row{display:flex;gap:6px;flex-wrap:wrap}
+.empty{text-align:center;padding:50px 24px;color:var(--muted)}
+.notif{display:inline-block;background:var(--danger);color:#fff;border-radius:10px;padding:1px 7px;font-size:10px;font-weight:700;margin-left:auto}
 @media(max-width:900px){.two-col{grid-template-columns:1fr}}
 @media(max-width:700px){.sidebar{display:none}.page{padding:20px}.topbar{padding:16px 20px}}
 </style>
@@ -175,92 +167,851 @@ tr:hover td{background:rgba(255,255,255,0.02)}
 const SUPABASE_URL = "https://cxjbyhzibjinkeypuaak.supabase.co";
 const SUPABASE_ANON = "sb_publishable_Ssp5xNESQAE10boERO-ESg_c-XENyQ8";
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
-const {useState,useEffect} = React;
-function fmt(d){if(!d)return"—";return new Date(d).toLocaleDateString("en-ZA",{day:"numeric",month:"short",year:"numeric"});}
-function Badge({level}){
-  const m={beginner:["badge-beginner","Beginner"],advanced:["badge-advanced","Advanced"],admin:["badge-admin","Admin"],pending:["badge-pending","Pending"],declined:["badge-pending","Declined"]};
-  const [c,l]=m[level]||["badge-pending",level||"Pending"];
-  return <span className={}>● {l}</span>;
+const {useState, useEffect} = React;
+
+function fmt(d) {
+  if (!d) return "—";
+  return new Date(d).toLocaleDateString("en-ZA", {day:"numeric",month:"short",year:"numeric"});
 }
-function AdminLoginPage({onLogin}){
-  const [email,setEmail]=useState("");const [pw,setPw]=useState("");const [err,setErr]=useState("");const [loading,setLoading]=useState(false);const [show,setShow]=useState(false);
-  async function handle(e){e.preventDefault();setErr("");setLoading(true);try{const{data,error}=await sb.auth.signInWithPassword({email,password:pw});if(error)throw error;const{data:p}=await sb.from("users").select("*").eq("id",data.user.id).single();if(!p?.is_admin)throw new Error("No admin access.");onLogin({...data.user,profile:p||{}});}catch(e){setErr(e.message);}finally{setLoading(false);}}
-  return(<div className="admin-login-page"><div className="admin-card"><div className="admin-card-logo"><div class="text-logo"><span class="tl-ddp">DDP</span><span class="tl-fx">FOREX INSTITUTE</span></div><div><span className="admin-badge-header">⚙ Admin Portal</span></div></div>{err&&<div className="alert alert-error">{err}</div>}<form onSubmit={handle}><div className="form-group"><label className="form-label">Admin Email</label><input className="form-input" type="email" value={email} onChange={e=>setEmail(e.target.value)} required placeholder="admin@ddpforex.com"/></div><div className="form-group"><label className="form-label">Password</label><input className="form-input" type="password" value={pw} onChange={e=>setPw(e.target.value)} required placeholder="••••••••"/></div><button className="btn-primary" disabled={loading}>{loading?"Signing in…":"Enter Admin Panel"}</button></form><div style={{textAlign:"center",marginTop:20}}><span style={{fontSize:11,color:"var(--muted)",cursor:"pointer",textDecoration:"underline"}} onClick={()=>setShow(!show)}>{show?"Hide credentials":"Show admin credentials"}</span></div>{show&&<div className="creds-box"><div style={{fontSize:10,letterSpacing:".1em",textTransform:"uppercase",color:"var(--muted)",marginBottom:10}}>Your Admin Login Details</div><div className="cred-line"><span className="cred-label">Email</span><span className="cred-val">admin@ddpforex.com</span></div><div className="cred-line"><span className="cred-label">Password</span><span className="cred-val">DDP@Admin2025!</span></div><div style={{fontSize:10,color:"var(--muted)",marginTop:10}}>First: register this email on the member portal, then run the SQL in Supabase to set is_admin=true.</div></div>}<div style={{textAlign:"center",marginTop:20}}><span style={{fontSize:11,color:"var(--muted)",cursor:"pointer"}} onClick={()=>window.location.hash=""}>← Member portal</span></div></div></div>);
+
+function Logo() {
+  return (
+    <div className="sidebar-logo">
+      <span className="logo-ddp">DDP</span>
+      <span className="logo-sub">Forex Institute</span>
+    </div>
+  );
 }
-function AuthPage({onLogin,goAdmin}){
-  const [tab,setTab]=useState("login");const [email,setEmail]=useState("");const [password,setPassword]=useState("");const [fullName,setFullName]=useState("");const [level,setLevel]=useState("beginner");const [loading,setLoading]=useState(false);const [error,setError]=useState("");const [success,setSuccess]=useState("");
-  async function handleLogin(e){e.preventDefault();setLoading(true);setError("");try{const{data,error:err}=await sb.auth.signInWithPassword({email,password});if(err)throw err;const{data:profile}=await sb.from("users").select("*").eq("id",data.user.id).single();onLogin({...data.user,profile:profile||{}});}catch(err){setError(err.message);}finally{setLoading(false);}}
-  async function handleRegister(e){e.preventDefault();setLoading(true);setError("");setSuccess("");try{const{data,error:err}=await sb.auth.signUp({email,password});if(err)throw err;await sb.from("users").insert({id:data.user.id,email,full_name:fullName,membership_level:level,status:"pending",created_at:new Date().toISOString()});setSuccess("Registration successful! Awaiting admin approval.");setTab("login");}catch(err){setError(err.message);}finally{setLoading(false);}}
-  return(<div className="auth-page"><div className="auth-card"><div className="auth-logo"><div class="text-logo"><span class="tl-ddp">DDP</span><span class="tl-fx">FOREX INSTITUTE</span></div><p>Member Portal</p></div>{error&&<div className="alert alert-error">{error}</div>}{success&&<div className="alert alert-success">{success}</div>}<div className="auth-tabs"><button className={} onClick={()=>setTab("login")}>Sign In</button><button className={} onClick={()=>setTab("register")}>Register</button></div>{tab==="login"?(<form onSubmit={handleLogin}><div className="form-group"><label className="form-label">Email</label><input className="form-input" type="email" value={email} onChange={e=>setEmail(e.target.value)} required placeholder="you@example.com"/></div><div className="form-group"><label className="form-label">Password</label><input className="form-input" type="password" value={password} onChange={e=>setPassword(e.target.value)} required placeholder="••••••••"/></div><button className="btn-primary" disabled={loading}>{loading?"Signing in…":"Sign In"}</button></form>):(<form onSubmit={handleRegister}><div className="form-group"><label className="form-label">Full Name</label><input className="form-input" type="text" value={fullName} onChange={e=>setFullName(e.target.value)} required placeholder="John Doe"/></div><div className="form-group"><label className="form-label">Email</label><input className="form-input" type="email" value={email} onChange={e=>setEmail(e.target.value)} required placeholder="you@example.com"/></div><div className="form-group"><label className="form-label">Password</label><input className="form-input" type="password" value={password} onChange={e=>setPassword(e.target.value)} required placeholder="Min 6 characters"/></div><div className="form-group"><label className="form-label">Membership Level</label><select className="form-select" value={level} onChange={e=>setLevel(e.target.value)}><option value="beginner">Beginner</option><option value="advanced">Advanced</option></select></div><button className="btn-primary" disabled={loading}>{loading?"Creating…":"Create Account"}</button></form>)}<div style={{textAlign:"center",marginTop:24}}><span style={{fontSize:11,color:"var(--muted)",cursor:"pointer"}} onClick={goAdmin}>Admin login →</span></div></div></div>);
+
+function Badge(props) {
+  var level = props.level;
+  var labels = {beginner:"Beginner",advanced:"Advanced",admin:"Admin",pending:"Pending",declined:"Declined"};
+  var classes = {beginner:"badge badge-beginner",advanced:"badge badge-advanced",admin:"badge badge-admin",pending:"badge badge-pending",declined:"badge badge-pending"};
+  var cls = classes[level] || "badge badge-pending";
+  var lbl = labels[level] || (level || "Pending");
+  return <span className={cls}>&#9679; {lbl}</span>;
 }
-function PendingScreen({user,onLogout}){return(<div className="pending-screen"><div className="pending-card"><div class="text-logo" style={{marginBottom:16}}><span class="tl-ddp">DDP</span><span class="tl-fx">FOREX INSTITUTE</span></div><div style={{fontSize:32}}>⏳</div><h2 className="pending-title cinzel">Account Pending</h2><p className="pending-text">Thank you, <strong>{user.profile?.full_name||user.email}</strong>.<br/><br/>Your account is awaiting admin approval.</p><button className="btn-logout" style={{marginTop:28}} onClick={onLogout}>Sign Out</button></div></div>);}
-function AdminPanel({adminUser,onLogout}){
-  const [tab,setTab]=useState("users");
-  const [users,setUsers]=useState([]);const [courses,setCourses]=useState([]);const [sections,setSections]=useState([]);const [videos,setVideos]=useState([]);
-  const [loading,setLoading]=useState(true);const [modal,setModal]=useState(null);const [form,setForm]=useState({});const [msg,setMsg]=useState("");const [search,setSearch]=useState("");
-  async function load(){setLoading(true);const[u,c,s,v]=await Promise.all([sb.from("users").select("*").order("created_at",{ascending:false}),sb.from("courses").select("*").order("order_index"),sb.from("sections").select("*").order("order_index"),sb.from("videos").select("*").order("order_index")]);setUsers(u.data||[]);setCourses(c.data||[]);setSections(s.data||[]);setVideos(v.data||[]);setLoading(false);}
-  useEffect(()=>{load();},[]);
-  function flash(m){setMsg(m);setTimeout(()=>setMsg(""),3000);}
-  async function approveUser(id){await sb.from("users").update({status:"active"}).eq("id",id);flash("✓ User approved");load();}
-  async function declineUser(id){await sb.from("users").update({status:"declined"}).eq("id",id);flash("User declined");load();}
-  async function changeLevel(id,level){await sb.from("users").update({membership_level:level}).eq("id",id);flash("✓ Level updated");load();}
-  async function deleteUser(id){if(!window.confirm("Delete this user permanently?"))return;await sb.from("users").delete().eq("id",id);load();}
-  async function saveModal(){const{type,id}=modal;const payload={...form};if(type==="course"){if(id)await sb.from("courses").update(payload).eq("id",id);else await sb.from("courses").insert({...payload,order_index:courses.length});}else if(type==="section"){if(id)await sb.from("sections").update(payload).eq("id",id);else await sb.from("sections").insert({...payload,order_index:sections.length});}else if(type==="video"){if(id)await sb.from("videos").update(payload).eq("id",id);else await sb.from("videos").insert({...payload,order_index:videos.length});}setModal(null);setForm({});flash("✓ Saved");load();}
-  async function deleteItem(table,id){if(!window.confirm("Delete?"))return;await sb.from(table).delete().eq("id",id);flash("Deleted");load();}
-  function openModal(type,item={}){setModal({type,id:item.id||null});setForm({...item});}
-  const stats={total:users.length,active:users.filter(u=>u.status==="active").length,pending:users.filter(u=>u.status==="pending").length,beginner:users.filter(u=>u.membership_level==="beginner"&&u.status==="active").length,advanced:users.filter(u=>u.membership_level==="advanced"&&u.status==="active").length};
-  const filtered=users.filter(u=>!search||(u.full_name||"").toLowerCase().includes(search.toLowerCase())||(u.email||"").toLowerCase().includes(search.toLowerCase()));
-  return(<div className="app-shell"><aside className="sidebar"><div className="sidebar-logo"><div class="text-logo"><span class="tl-ddp">DDP</span><span class="tl-fx">FOREX INSTITUTE</span></div></div><div className="sidebar-section-label">Admin</div>{["users","courses","sections","videos"].map(t=>(<div key={t} className={} onClick={()=>setTab(t)}><span className="icon">{t==="users"?"👥":t==="courses"?"📚":t==="sections"?"📂":"🎬"}</span>{t.charAt(0).toUpperCase()+t.slice(1)}{t==="users"&&stats.pending>0&&<span style={{marginLeft:"auto",background:"var(--danger)",color:"#fff",borderRadius:"10px",padding:"1px 7px",fontSize:10,fontWeight:700}}>{stats.pending}</span>}</div>))}<div className="sidebar-section-label">Account</div><div className="nav-item" onClick={onLogout}><span className="icon">←</span>Sign Out</div><div className="sidebar-footer"><Badge level="admin"/><div className="user-name">{adminUser.profile?.full_name||"Admin"}</div><div className="user-email">{adminUser.email}</div></div></aside><main className="main"><div className="topbar"><h2>{tab.charAt(0).toUpperCase()+tab.slice(1)}</h2><div style={{display:"flex",alignItems:"center",gap:12}}>{msg&&<span style={{fontSize:12,color:"var(--green)"}}>{msg}</span>}<Badge level="admin"/></div></div><div className="page">{tab==="users"&&(<div className="stats-grid">{[["Total",stats.total],["Active",stats.active],["Pending",stats.pending],["Beginner",stats.beginner],["Advanced",stats.advanced]].map(([l,v])=>(<div key={l} className="stat-card"><div className="stat-label">{l}</div><div className="stat-value">{v}</div></div>))}</div>)}<div className="admin-tabs">{["users","courses","sections","videos"].map(t=>(<button key={t} className={} onClick={()=>setTab(t)}>{t.charAt(0).toUpperCase()+t.slice(1)}{t==="users"&&stats.pending>0&&<span style={{marginLeft:6,background:"var(--danger)",color:"#fff",borderRadius:"10px",padding:"1px 6px",fontSize:10}}>{stats.pending}</span>}</button>))}</div>{loading?<div style={{color:"var(--muted)",textAlign:"center",padding:60}}>Loading…</div>:(<>{tab==="users"&&(<div className="card"><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16}}><div className="card-title" style={{marginBottom:0}}>All Members</div><input className="form-input" style={{width:220}} placeholder="Search name or email…" value={search} onChange={e=>setSearch(e.target.value)}/></div><div className="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Level</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead><tbody>{filtered.map(u=>(<tr key={u.id}><td style={{fontWeight:600}}>{u.full_name||"—"}</td><td style={{color:"var(--muted)",fontSize:12}}>{u.email}</td><td><select className="form-select" style={{width:130,padding:"4px 8px",fontSize:12}} value={u.membership_level||"beginner"} onChange={e=>changeLevel(u.id,e.target.value)}><option value="beginner">Beginner</option><option value="advanced">Advanced</option></select></td><td><Badge level={u.status==="active"?u.membership_level:u.status}/></td><td style={{color:"var(--muted)",fontSize:12}}>{fmt(u.created_at)}</td><td><div className="action-row">{u.status==="pending"&&<><button className="btn-sm btn-approve" onClick={()=>approveUser(u.id)}>Approve</button><button className="btn-sm btn-decline" onClick={()=>declineUser(u.id)}>Decline</button></>}{u.status==="active"&&<span style={{fontSize:11,color:"var(--green)"}}>✓ Active</span>}{u.status==="declined"&&<button className="btn-sm btn-approve" onClick={()=>approveUser(u.id)}>Re-approve</button>}<button className="btn-sm btn-delete" onClick={()=>deleteUser(u.id)}>Delete</button></div></td></tr>))}</tbody></table>{filtered.length===0&&<div className="empty-state"><div className="empty-icon">👥</div><div className="empty-text">No members found.</div></div>}</div></div>)}{tab==="courses"&&(<div><div style={{marginBottom:20}}><button className="btn-add" onClick={()=>openModal("course")}>+ Add Course</button></div><div className="card"><table><thead><tr><th>Title</th><th>Level</th><th>Description</th><th>Actions</th></tr></thead><tbody>{courses.map(c=>(<tr key={c.id}><td style={{fontWeight:600}}>{c.emoji} {c.title}</td><td><Badge level={c.level}/></td><td style={{color:"var(--muted)",maxWidth:240,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{c.description}</td><td><div className="action-row"><button className="btn-sm btn-edit" onClick={()=>openModal("course",c)}>Edit</button><button className="btn-sm btn-delete" onClick={()=>deleteItem("courses",c.id)}>Delete</button></div></td></tr>))}</tbody></table>{courses.length===0&&<div className="empty-state"><div className="empty-icon">📚</div><div className="empty-text">No courses yet.</div></div>}</div></div>)}{tab==="sections"&&(<div><div style={{marginBottom:20}}><button className="btn-add" onClick={()=>openModal("section")}>+ Add Section</button></div><div className="card"><table><thead><tr><th>Title</th><th>Course</th><th>Actions</th></tr></thead><tbody>{sections.map(s=>(<tr key={s.id}><td style={{fontWeight:600}}>{s.title}</td><td style={{color:"var(--muted)"}}>{courses.find(c=>c.id===s.course_id)?.title||"—"}</td><td><div className="action-row"><button className="btn-sm btn-edit" onClick={()=>openModal("section",s)}>Edit</button><button className="btn-sm btn-delete" onClick={()=>deleteItem("sections",s.id)}>Delete</button></div></td></tr>))}</tbody></table>{sections.length===0&&<div className="empty-state"><div className="empty-icon">📂</div><div className="empty-text">No sections yet.</div></div>}</div></div>)}{tab==="videos"&&(<div><div style={{marginBottom:20,display:"flex",gap:12,alignItems:"center"}}><button className="btn-add" onClick={()=>openModal("video")}>+ Add Video / Lesson</button><span style={{fontSize:12,color:"var(--muted)"}}>Paste your Bunny.net embed code when adding</span></div><div className="card"><table><thead><tr><th>Title</th><th>Section</th><th>Course</th><th>Duration</th><th>Actions</th></tr></thead><tbody>{videos.map(v=>{const sec=sections.find(s=>s.id===v.section_id);const course=courses.find(c=>c.id===sec?.course_id);return(<tr key={v.id}><td style={{fontWeight:600}}>{v.title}</td><td style={{color:"var(--muted)"}}>{sec?.title||"—"}</td><td style={{color:"var(--muted)"}}>{course?.title||"—"}</td><td style={{color:"var(--muted)"}}>{v.duration||"—"}</td><td><div className="action-row"><button className="btn-sm btn-edit" onClick={()=>openModal("video",v)}>Edit</button><button className="btn-sm btn-delete" onClick={()=>deleteItem("videos",v.id)}>Delete</button></div></td></tr>);})}</tbody></table>{videos.length===0&&<div className="empty-state"><div className="empty-icon">🎬</div><div className="empty-text">No videos yet.</div></div>}</div></div>)}</>)}</div></main>{modal&&(<div className="modal-overlay" onClick={e=>{if(e.target===e.currentTarget){setModal(null);setForm({});}}}>  <div className="modal"><div className="modal-title cinzel">{modal.id?"Edit":"Add"} {modal.type.charAt(0).toUpperCase()+modal.type.slice(1)}</div>{modal.type==="course"&&<><div className="form-group"><label className="form-label">Course Title</label><input className="form-input" value={form.title||""} onChange={e=>setForm({...form,title:e.target.value})} placeholder="e.g. Beginner Foundation"/></div><div className="form-group"><label className="form-label">Description</label><textarea className="journal-textarea" style={{minHeight:70}} value={form.description||""} onChange={e=>setForm({...form,description:e.target.value})}/></div><div className="form-group"><label className="form-label">Access Level</label><select className="form-select" value={form.level||"beginner"} onChange={e=>setForm({...form,level:e.target.value})}><option value="beginner">Beginner</option><option value="advanced">Advanced</option></select></div><div className="form-group"><label className="form-label">Emoji Icon</label><input className="form-input" value={form.emoji||""} onChange={e=>setForm({...form,emoji:e.target.value})} placeholder="📈"/></div></>}{modal.type==="section"&&<><div className="form-group"><label className="form-label">Section Title</label><input className="form-input" value={form.title||""} onChange={e=>setForm({...form,title:e.target.value})} placeholder="e.g. Module 1: Market Basics"/></div><div className="form-group"><label className="form-label">Course</label><select className="form-select" value={form.course_id||""} onChange={e=>setForm({...form,course_id:e.target.value})}><option value="">— Select Course —</option>{courses.map(c=><option key={c.id} value={c.id}>{c.title}</option>)}</select></div></>}{modal.type==="video"&&<><div className="form-group"><label className="form-label">Lesson Title</label><input className="form-input" value={form.title||""} onChange={e=>setForm({...form,title:e.target.value})} placeholder="e.g. Understanding Candlesticks"/></div><div className="form-group"><label className="form-label">Section</label><select className="form-select" value={form.section_id||""} onChange={e=>setForm({...form,section_id:e.target.value})}><option value="">— Select Section —</option>{sections.map(s=><option key={s.id} value={s.id}>{courses.find(c=>c.id===s.course_id)?.title||""} › {s.title}</option>)}</select></div><div className="form-group"><label className="form-label">Bunny.net Embed Code</label><textarea className="journal-textarea" style={{minHeight:100,fontFamily:"monospace",fontSize:11}} value={form.embed_code||""} onChange={e=>setForm({...form,embed_code:e.target.value})} placeholder="Paste full Bunny.net iframe embed code here"/><div style={{fontSize:11,color:"var(--muted)",marginTop:6}}>Bunny.net → Stream → your video → Share → Embed → copy full iframe</div></div><div className="form-group"><label className="form-label">Duration (e.g. 12:30)</label><input className="form-input" value={form.duration||""} onChange={e=>setForm({...form,duration:e.target.value})} placeholder="00:00"/></div><div className="form-group"><label className="form-label">Description (optional)</label><textarea className="journal-textarea" style={{minHeight:60}} value={form.description||""} onChange={e=>setForm({...form,description:e.target.value})}/></div></>}<div className="modal-actions"><button className="btn-cancel" onClick={()=>{setModal(null);setForm({});}}>Cancel</button><button className="btn-save" onClick={saveModal}>Save</button></div></div></div>)}</div>);
+
+function AdminLoginPage(props) {
+  var onLogin = props.onLogin;
+  var [email, setEmail] = useState("");
+  var [pw, setPw] = useState("");
+  var [err, setErr] = useState("");
+  var [loading, setLoading] = useState(false);
+  var [show, setShow] = useState(false);
+
+  async function handle(e) {
+    e.preventDefault(); setErr(""); setLoading(true);
+    try {
+      var r = await sb.auth.signInWithPassword({email:email, password:pw});
+      if (r.error) throw r.error;
+      var pr = await sb.from("users").select("*").eq("id", r.data.user.id).single();
+      var profile = pr.data || {};
+      if (!profile.is_admin) throw new Error("No admin access for this account.");
+      onLogin(Object.assign({}, r.data.user, {profile:profile}));
+    } catch(e) { setErr(e.message); }
+    finally { setLoading(false); }
+  }
+
+  return (
+    <div className="admin-pg">
+      <div className="admin-card">
+        <div className="admin-logo">
+          <span className="logo-ddp">DDP</span>
+          <span className="logo-sub">Forex Institute</span>
+          <div><span className="admin-badge">&#9881; Admin Portal</span></div>
+        </div>
+        {err && <div className="alert alert-err">{err}</div>}
+        <form onSubmit={handle}>
+          <div className="fg"><label className="fl">Admin Email</label><input className="fi" type="email" value={email} onChange={function(e){setEmail(e.target.value);}} required placeholder="admin@ddpforex.com"/></div>
+          <div className="fg"><label className="fl">Password</label><input className="fi" type="password" value={pw} onChange={function(e){setPw(e.target.value);}} required placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"/></div>
+          <button className="btn-gold" type="submit" disabled={loading}>{loading ? "Signing in..." : "Enter Admin Panel"}</button>
+        </form>
+        <div style={{textAlign:"center",marginTop:20}}>
+          <span style={{fontSize:11,color:"var(--muted)",cursor:"pointer",textDecoration:"underline"}} onClick={function(){setShow(!show);}}>
+            {show ? "Hide credentials" : "Show admin credentials"}
+          </span>
+        </div>
+        {show && (
+          <div className="creds">
+            <div style={{fontSize:10,letterSpacing:".1em",textTransform:"uppercase",color:"var(--muted)",marginBottom:10}}>Your Admin Login Details</div>
+            <div className="cred-row"><span className="cred-k">Email</span><span className="cred-v">admin@ddpforex.com</span></div>
+            <div className="cred-row"><span className="cred-k">Password</span><span className="cred-v">DDP@Admin2025!</span></div>
+            <div style={{fontSize:11,color:"var(--muted)",marginTop:10,lineHeight:1.6}}>First register this email on the member portal, then run in Supabase SQL Editor:<br/><code style={{color:"var(--gold)"}}>UPDATE public.users SET is_admin=true, status='active' WHERE email='admin@ddpforex.com';</code></div>
+          </div>
+        )}
+        <div style={{textAlign:"center",marginTop:20}}>
+          <span style={{fontSize:11,color:"var(--muted)",cursor:"pointer"}} onClick={props.goMember}>&#8592; Back to member portal</span>
+        </div>
+      </div>
+    </div>
+  );
 }
-function CoursesPage({userLevel}){
-  const [courses,setCourses]=useState([]);const [selected,setSelected]=useState(null);const [sections,setSections]=useState([]);const [videos,setVideos]=useState([]);const [activeVideo,setActiveVideo]=useState(null);const [openSections,setOpenSections]=useState({});const [loading,setLoading]=useState(true);
-  useEffect(()=>{sb.from("courses").select("*").order("order_index").then(({data})=>{setCourses(data||[]);setLoading(false);});},[]);
-  async function openCourse(course){setSelected(course);const{data:s}=await sb.from("sections").select("*").eq("course_id",course.id).order("order_index");setSections(s||[]);if(s?.length){const{data:v}=await sb.from("videos").select("*").in("section_id",s.map(x=>x.id)).order("order_index");setVideos(v||[]);if(v?.length)setActiveVideo(v[0]);}const open={};(s||[]).forEach(sec=>open[sec.id]=true);setOpenSections(open);}
-  const canAccess=c=>userLevel==="advanced"||c.level==="beginner";
-  if(loading)return <div className="page"><div style={{color:"var(--muted)",textAlign:"center",padding:60}}>Loading courses…</div></div>;
-  if(selected)return(<div className="page"><div style={{display:"inline-flex",alignItems:"center",gap:6,color:"var(--muted)",fontSize:12,cursor:"pointer",marginBottom:24}} onClick={()=>{setSelected(null);setActiveVideo(null);}}>← Back to Courses</div><div style={{marginBottom:24}}><h2 className="cinzel" style={{fontSize:18,fontWeight:700,letterSpacing:".06em",marginBottom:6}}>{selected.title}</h2><Badge level={selected.level}/></div><div className="two-col"><div><div className="video-area">{activeVideo?.embed_code?<div style={{width:"100%",height:"100%"}} dangerouslySetInnerHTML={{__html:activeVideo.embed_code}}/>:<div className="video-placeholder"><div className="big-icon">▶</div><p>{activeVideo?"No embed code set.":"Select a lesson."}</p></div>}</div>{activeVideo&&<div><h3 className="cinzel" style={{fontSize:14,fontWeight:600,marginBottom:6}}>{activeVideo.title}</h3>{activeVideo.description&&<p style={{color:"var(--muted)",fontSize:13,lineHeight:1.7}}>{activeVideo.description}</p>}</div>}</div><div><div style={{fontFamily:""Cinzel",serif",fontSize:11,letterSpacing:".1em",textTransform:"uppercase",color:"var(--muted)",marginBottom:12}}>Course Content</div>{sections.map(sec=>{const lessons=videos.filter(v=>v.section_id===sec.id);const isOpen=openSections[sec.id];return(<div key={sec.id} className="section-item"><div className="section-header" onClick={()=>setOpenSections(p=>({...p,[sec.id]:!p[sec.id]}))}>  <div><div className="section-title">{sec.title}</div><div style={{fontSize:11,color:"var(--muted)",marginTop:2}}>{lessons.length} lesson{lessons.length!==1?"s":""}</div></div><span className={}>▼</span></div>{isOpen&&<div className="section-lessons">{lessons.map(v=>(<div key={v.id} className={} onClick={()=>setActiveVideo(v)}><span style={{color:"var(--muted)",fontSize:12,width:16,textAlign:"center"}}>{activeVideo?.id===v.id?"▶":"○"}</span><span className="lesson-title">{v.title}</span>{v.duration&&<span className="lesson-duration">{v.duration}</span>}</div>))}</div>}</div>);})}</div></div></div>);
-  return(<div className="page"><div style={{marginBottom:28}}><h2 className="cinzel" style={{fontSize:18,fontWeight:700,letterSpacing:".08em",marginBottom:6}}>Courses</h2><p style={{color:"var(--muted)",fontSize:13}}>{userLevel==="beginner"?"Beginner courses available.":"All courses available."}</p></div>{courses.length===0&&<div className="empty-state"><div className="empty-icon">📚</div><div className="empty-text">No courses published yet.</div></div>}<div className="courses-grid">{courses.map(course=>{const locked=!canAccess(course);return(<div key={course.id} className="course-card" style={locked?{opacity:.4,cursor:"not-allowed"}:{}} onClick={()=>!locked&&openCourse(course)}><div className={}><span>{course.emoji||(course.level==="advanced"?"📊":"📈")}</span>{locked&&<span style={{position:"absolute",top:10,left:10,fontSize:16}}>🔒</span>}</div><div className="course-body"><div className="course-title">{course.title}</div><div className="course-meta">{course.description}</div></div></div>);})}</div></div>);
+
+function AuthPage(props) {
+  var [tab, setTab] = useState("login");
+  var [email, setEmail] = useState("");
+  var [password, setPassword] = useState("");
+  var [fullName, setFullName] = useState("");
+  var [level, setLevel] = useState("beginner");
+  var [loading, setLoading] = useState(false);
+  var [error, setError] = useState("");
+  var [success, setSuccess] = useState("");
+
+  async function handleLogin(e) {
+    e.preventDefault(); setLoading(true); setError("");
+    try {
+      var r = await sb.auth.signInWithPassword({email:email, password:password});
+      if (r.error) throw r.error;
+      var pr = await sb.from("users").select("*").eq("id", r.data.user.id).single();
+      props.onLogin(Object.assign({}, r.data.user, {profile: pr.data || {}}));
+    } catch(e) { setError(e.message); }
+    finally { setLoading(false); }
+  }
+
+  async function handleRegister(e) {
+    e.preventDefault(); setLoading(true); setError(""); setSuccess("");
+    try {
+      var r = await sb.auth.signUp({email:email, password:password});
+      if (r.error) throw r.error;
+      await sb.from("users").insert({id:r.data.user.id, email:email, full_name:fullName, membership_level:level, status:"pending", created_at:new Date().toISOString()});
+      setSuccess("Registration successful! Awaiting admin approval."); setTab("login");
+    } catch(e) { setError(e.message); }
+    finally { setLoading(false); }
+  }
+
+  return (
+    <div className="auth-page">
+      <div className="auth-card">
+        <div className="auth-logo">
+          <span className="logo-ddp">DDP</span>
+          <span className="logo-sub">Forex Institute</span>
+          <p>Member Portal</p>
+        </div>
+        {error && <div className="alert alert-err">{error}</div>}
+        {success && <div className="alert alert-ok">{success}</div>}
+        <div className="tab-row">
+          <button className={"tab-btn" + (tab === "login" ? " tab-btn-active" : "")} onClick={function(){setTab("login");}}>Sign In</button>
+          <button className={"tab-btn" + (tab === "register" ? " tab-btn-active" : "")} onClick={function(){setTab("register");}}>Register</button>
+        </div>
+        {tab === "login" ? (
+          <form onSubmit={handleLogin}>
+            <div className="fg"><label className="fl">Email</label><input className="fi" type="email" value={email} onChange={function(e){setEmail(e.target.value);}} required placeholder="you@example.com"/></div>
+            <div className="fg"><label className="fl">Password</label><input className="fi" type="password" value={password} onChange={function(e){setPassword(e.target.value);}} required placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"/></div>
+            <button className="btn-gold" type="submit" disabled={loading}>{loading ? "Signing in..." : "Sign In"}</button>
+          </form>
+        ) : (
+          <form onSubmit={handleRegister}>
+            <div className="fg"><label className="fl">Full Name</label><input className="fi" type="text" value={fullName} onChange={function(e){setFullName(e.target.value);}} required placeholder="John Doe"/></div>
+            <div className="fg"><label className="fl">Email</label><input className="fi" type="email" value={email} onChange={function(e){setEmail(e.target.value);}} required placeholder="you@example.com"/></div>
+            <div className="fg"><label className="fl">Password</label><input className="fi" type="password" value={password} onChange={function(e){setPassword(e.target.value);}} required placeholder="Min 6 characters"/></div>
+            <div className="fg"><label className="fl">Membership Level</label>
+              <select className="fsel" value={level} onChange={function(e){setLevel(e.target.value);}}>
+                <option value="beginner">Beginner</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+            <button className="btn-gold" type="submit" disabled={loading}>{loading ? "Creating..." : "Create Account"}</button>
+          </form>
+        )}
+        <div style={{textAlign:"center",marginTop:24}}>
+          <span style={{fontSize:11,color:"var(--muted)",cursor:"pointer"}} onClick={props.goAdmin}>Admin login &#8594;</span>
+        </div>
+      </div>
+    </div>
+  );
 }
-function JournalPage({userId}){
-  const [entries,setEntries]=useState([]);const [text,setText]=useState("");const [loading,setLoading]=useState(true);const [saving,setSaving]=useState(false);
-  useEffect(()=>{sb.from("journal_entries").select("*").eq("user_id",userId).order("created_at",{ascending:false}).then(({data})=>{setEntries(data||[]);setLoading(false);});},[userId]);
-  async function save(){if(!text.trim())return;setSaving(true);await sb.from("journal_entries").insert({user_id:userId,content:text,created_at:new Date().toISOString()});setText("");const{data}=await sb.from("journal_entries").select("*").eq("user_id",userId).order("created_at",{ascending:false});setEntries(data||[]);setSaving(false);}
-  async function del(id){if(!window.confirm("Delete?"))return;await sb.from("journal_entries").delete().eq("id",id);setEntries(e=>e.filter(x=>x.id!==id));}
-  return(<div className="page"><div style={{marginBottom:28}}><h2 className="cinzel" style={{fontSize:18,fontWeight:700,letterSpacing:".08em",marginBottom:6}}>Trading Journal</h2><p style={{color:"var(--muted)",fontSize:13}}>Document your trades and reflections.</p></div><div className="card" style={{marginBottom:24}}><div className="card-title">New Entry</div><textarea className="journal-textarea" value={text} onChange={e=>setText(e.target.value)} placeholder="What did you observe today? What trades did you take?"/><div style={{display:"flex",justifyContent:"flex-end",marginTop:12}}><button className="btn-add" disabled={saving||!text.trim()} onClick={save}>{saving?"Saving…":"+ Save Entry"}</button></div></div>{loading?<div style={{color:"var(--muted)",textAlign:"center",padding:40}}>Loading…</div>:entries.length===0?<div className="empty-state"><div className="empty-icon">📓</div><div className="empty-text">No entries yet.</div></div>:entries.map(e=>(<div key={e.id} className="journal-entry"><div style={{display:"flex",justifyContent:"space-between",marginBottom:8}}><div className="journal-date">{fmt(e.created_at)}</div><button className="btn-sm btn-delete" onClick={()=>del(e.id)}>Delete</button></div><div className="journal-text">{e.content}</div></div>))}</div>);
+
+function PendingScreen(props) {
+  return (
+    <div className="pend-page">
+      <div className="pend-card">
+        <span className="logo-ddp">DDP</span>
+        <span className="logo-sub">Forex Institute</span>
+        <div style={{fontSize:32,marginTop:20}}>&#9203;</div>
+        <h2 className="pend-title">Account Pending</h2>
+        <p className="pend-text">Thank you, <strong>{props.user.profile && props.user.profile.full_name ? props.user.profile.full_name : props.user.email}</strong>.<br/><br/>Your account is awaiting admin approval.</p>
+        <button className="btn-logout" style={{marginTop:28}} onClick={props.onLogout}>Sign Out</button>
+      </div>
+    </div>
+  );
 }
-const CHECKLIST=["Set up your trading account with a broker","Complete the Beginner Foundation course","Paper trade for at least 30 days","Document your first 10 journal entries","Define your personal risk tolerance","Learn to read candlestick patterns","Understand support and resistance levels","Master the 3 core DDP entry models","Build and backtest your trading plan","Complete 60 days without breaking your rules"];
-function ChecklistPage({userId}){
-  const [checked,setChecked]=useState({});const [loading,setLoading]=useState(true);
-  useEffect(()=>{sb.from("checklists").select("*").eq("user_id",userId).single().then(({data})=>{if(data?.items)setChecked(data.items);setLoading(false);});},[userId]);
-  async function toggle(idx){const next={...checked,[idx]:!checked[idx]};setChecked(next);const{data}=await sb.from("checklists").select("id").eq("user_id",userId).single();if(data)await sb.from("checklists").update({items:next}).eq("user_id",userId);else await sb.from("checklists").insert({user_id:userId,items:next});}
-  const done=Object.values(checked).filter(Boolean).length;const pct=Math.round((done/CHECKLIST.length)*100);
-  return(<div className="page"><div style={{marginBottom:28}}><h2 className="cinzel" style={{fontSize:18,fontWeight:700,letterSpacing:".08em",marginBottom:6}}>Trader Checklist</h2><p style={{color:"var(--muted)",fontSize:13}}>{done} of {CHECKLIST.length} milestones completed ({pct}%)</p></div><div style={{height:4,background:"var(--bg3)",borderRadius:4,marginBottom:28,overflow:"hidden"}}><div style={{width:,height:"100%",background:"var(--green)",borderRadius:4,transition:"width .4s"}}/></div>{loading?<div style={{color:"var(--muted)",textAlign:"center",padding:40}}>Loading…</div>:CHECKLIST.map((item,idx)=>(<div key={idx} className={} onClick={()=>toggle(idx)}><div className={}>{checked[idx]?"✓":""}</div><div className={}>{item}</div></div>))}</div>);
+
+function AdminPanel(props) {
+  var adminUser = props.adminUser;
+  var [tab, setTab] = useState("users");
+  var [users, setUsers] = useState([]);
+  var [courses, setCourses] = useState([]);
+  var [sections, setSections] = useState([]);
+  var [videos, setVideos] = useState([]);
+  var [loading, setLoading] = useState(true);
+  var [modal, setModal] = useState(null);
+  var [form, setForm] = useState({});
+  var [msg, setMsg] = useState("");
+  var [search, setSearch] = useState("");
+
+  async function load() {
+    setLoading(true);
+    var [u, c, s, v] = await Promise.all([
+      sb.from("users").select("*").order("created_at", {ascending:false}),
+      sb.from("courses").select("*").order("order_index"),
+      sb.from("sections").select("*").order("order_index"),
+      sb.from("videos").select("*").order("order_index"),
+    ]);
+    setUsers(u.data || []); setCourses(c.data || []); setSections(s.data || []); setVideos(v.data || []);
+    setLoading(false);
+  }
+
+  useEffect(function() { load(); }, []);
+
+  function flash(m) { setMsg(m); setTimeout(function(){setMsg("");}, 3000); }
+
+  async function approveUser(id) { await sb.from("users").update({status:"active"}).eq("id",id); flash("User approved"); load(); }
+  async function declineUser(id) { await sb.from("users").update({status:"declined"}).eq("id",id); flash("User declined"); load(); }
+  async function changeLevel(id, lv) { await sb.from("users").update({membership_level:lv}).eq("id",id); flash("Level updated"); load(); }
+  async function deleteUser(id) { if (!window.confirm("Delete this user permanently?")) return; await sb.from("users").delete().eq("id",id); load(); }
+
+  async function saveModal() {
+    var type = modal.type; var id = modal.id; var payload = Object.assign({}, form);
+    if (type === "course") {
+      if (id) await sb.from("courses").update(payload).eq("id",id);
+      else await sb.from("courses").insert(Object.assign(payload, {order_index:courses.length}));
+    } else if (type === "section") {
+      if (id) await sb.from("sections").update(payload).eq("id",id);
+      else await sb.from("sections").insert(Object.assign(payload, {order_index:sections.length}));
+    } else if (type === "video") {
+      if (id) await sb.from("videos").update(payload).eq("id",id);
+      else await sb.from("videos").insert(Object.assign(payload, {order_index:videos.length}));
+    }
+    setModal(null); setForm({}); flash("Saved"); load();
+  }
+
+  async function deleteItem(table, id) { if (!window.confirm("Delete?")) return; await sb.from(table).delete().eq("id",id); flash("Deleted"); load(); }
+  function openModal(type, item) { setModal({type:type, id:(item && item.id) ? item.id : null}); setForm(item ? Object.assign({}, item) : {}); }
+
+  var pending = users.filter(function(u){return u.status==="pending";}).length;
+  var filtered = users.filter(function(u){ return !search || (u.full_name||"").toLowerCase().indexOf(search.toLowerCase()) > -1 || (u.email||"").toLowerCase().indexOf(search.toLowerCase()) > -1; });
+
+  var TABS = ["users","courses","sections","videos"];
+
+  return (
+    <div className="app-shell">
+      <aside className="sidebar">
+        <Logo/>
+        <div className="sidebar-label">Admin</div>
+        {TABS.map(function(t) {
+          return (
+            <div key={t} className={"nav-item" + (tab===t ? " nav-item-active" : "")} onClick={function(){setTab(t);}}>
+              <span style={{width:16,textAlign:"center"}}>{t==="users"?"👥":t==="courses"?"📚":t==="sections"?"📂":"🎬"}</span>
+              {t.charAt(0).toUpperCase()+t.slice(1)}
+              {t==="users" && pending > 0 && <span className="notif">{pending}</span>}
+            </div>
+          );
+        })}
+        <div className="sidebar-label">Account</div>
+        <div className="nav-item" onClick={props.onLogout}><span style={{width:16,textAlign:"center"}}>&#8592;</span>Sign Out</div>
+        <div className="sidebar-footer">
+          <Badge level="admin"/>
+          <div className="uname">{adminUser.profile && adminUser.profile.full_name ? adminUser.profile.full_name : "Admin"}</div>
+          <div className="uemail">{adminUser.email}</div>
+        </div>
+      </aside>
+
+      <main className="main">
+        <div className="topbar">
+          <h2>{tab.charAt(0).toUpperCase()+tab.slice(1)}</h2>
+          <div style={{display:"flex",alignItems:"center",gap:12}}>
+            {msg && <span style={{fontSize:12,color:"var(--green)"}}>{msg}</span>}
+            <Badge level="admin"/>
+          </div>
+        </div>
+        <div className="page">
+          {tab === "users" && (
+            <div className="stats-grid">
+              {[["Total",users.length],["Active",users.filter(function(u){return u.status==="active";}).length],["Pending",pending],["Beginner",users.filter(function(u){return u.membership_level==="beginner"&&u.status==="active";}).length],["Advanced",users.filter(function(u){return u.membership_level==="advanced"&&u.status==="active";}).length]].map(function(item) {
+                return <div key={item[0]} className="stat-card"><div className="stat-label">{item[0]}</div><div className="stat-val">{item[1]}</div></div>;
+              })}
+            </div>
+          )}
+
+          <div className="atabs">
+            {TABS.map(function(t) {
+              return (
+                <button key={t} className={"atab" + (tab===t ? " atab-active" : "")} onClick={function(){setTab(t);}}>
+                  {t.charAt(0).toUpperCase()+t.slice(1)}
+                  {t==="users" && pending > 0 && <span className="notif" style={{marginLeft:6}}>{pending}</span>}
+                </button>
+              );
+            })}
+          </div>
+
+          {loading ? <div style={{color:"var(--muted)",textAlign:"center",padding:60}}>Loading...</div> : (
+            <div>
+              {tab === "users" && (
+                <div className="card">
+                  <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16}}>
+                    <div className="card-title" style={{marginBottom:0}}>All Members</div>
+                    <input className="fi" style={{width:220}} placeholder="Search..." value={search} onChange={function(e){setSearch(e.target.value);}}/>
+                  </div>
+                  <div className="tw">
+                    <table>
+                      <thead><tr><th>Name</th><th>Email</th><th>Level</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead>
+                      <tbody>
+                        {filtered.map(function(u) {
+                          return (
+                            <tr key={u.id}>
+                              <td style={{fontWeight:600}}>{u.full_name || "—"}</td>
+                              <td style={{color:"var(--muted)",fontSize:12}}>{u.email}</td>
+                              <td>
+                                <select className="fsel" style={{width:130,padding:"4px 8px",fontSize:12}} value={u.membership_level||"beginner"} onChange={function(e){changeLevel(u.id,e.target.value);}}>
+                                  <option value="beginner">Beginner</option>
+                                  <option value="advanced">Advanced</option>
+                                </select>
+                              </td>
+                              <td><Badge level={u.status==="active" ? u.membership_level : u.status}/></td>
+                              <td style={{color:"var(--muted)",fontSize:12}}>{fmt(u.created_at)}</td>
+                              <td>
+                                <div className="act-row">
+                                  {u.status==="pending" && <span><button className="bsm b-approve" onClick={function(){approveUser(u.id);}}>Approve</button> <button className="bsm b-decline" onClick={function(){declineUser(u.id);}}>Decline</button></span>}
+                                  {u.status==="active" && <span style={{fontSize:11,color:"var(--green)"}}>&#10003; Active</span>}
+                                  {u.status==="declined" && <button className="bsm b-approve" onClick={function(){approveUser(u.id);}}>Re-approve</button>}
+                                  <button className="bsm b-del" onClick={function(){deleteUser(u.id);}}>Delete</button>
+                                </div>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                    {filtered.length === 0 && <div className="empty"><div style={{fontSize:32,marginBottom:10}}>👥</div><div>No members found.</div></div>}
+                  </div>
+                </div>
+              )}
+
+              {tab === "courses" && (
+                <div>
+                  <div style={{marginBottom:20}}><button className="b-add" onClick={function(){openModal("course",{});}}>+ Add Course</button></div>
+                  <div className="card">
+                    <table>
+                      <thead><tr><th>Title</th><th>Level</th><th>Description</th><th>Actions</th></tr></thead>
+                      <tbody>
+                        {courses.map(function(c) {
+                          return (
+                            <tr key={c.id}>
+                              <td style={{fontWeight:600}}>{c.emoji} {c.title}</td>
+                              <td><Badge level={c.level}/></td>
+                              <td style={{color:"var(--muted)",maxWidth:220,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{c.description}</td>
+                              <td><div className="act-row"><button className="bsm b-edit" onClick={function(){openModal("course",c);}}>Edit</button><button className="bsm b-del" onClick={function(){deleteItem("courses",c.id);}}>Delete</button></div></td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                    {courses.length === 0 && <div className="empty"><div style={{fontSize:32,marginBottom:10}}>📚</div><div>No courses yet.</div></div>}
+                  </div>
+                </div>
+              )}
+
+              {tab === "sections" && (
+                <div>
+                  <div style={{marginBottom:20}}><button className="b-add" onClick={function(){openModal("section",{});}}>+ Add Section</button></div>
+                  <div className="card">
+                    <table>
+                      <thead><tr><th>Title</th><th>Course</th><th>Actions</th></tr></thead>
+                      <tbody>
+                        {sections.map(function(s) {
+                          var course = courses.find(function(c){return c.id===s.course_id;});
+                          return (
+                            <tr key={s.id}>
+                              <td style={{fontWeight:600}}>{s.title}</td>
+                              <td style={{color:"var(--muted)"}}>{course ? course.title : "—"}</td>
+                              <td><div className="act-row"><button className="bsm b-edit" onClick={function(){openModal("section",s);}}>Edit</button><button className="bsm b-del" onClick={function(){deleteItem("sections",s.id);}}>Delete</button></div></td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                    {sections.length === 0 && <div className="empty"><div style={{fontSize:32,marginBottom:10}}>📂</div><div>No sections yet.</div></div>}
+                  </div>
+                </div>
+              )}
+
+              {tab === "videos" && (
+                <div>
+                  <div style={{marginBottom:20,display:"flex",gap:12,alignItems:"center"}}>
+                    <button className="b-add" onClick={function(){openModal("video",{});}}>+ Add Video</button>
+                    <span style={{fontSize:12,color:"var(--muted)"}}>Paste Bunny.net embed code when adding</span>
+                  </div>
+                  <div className="card">
+                    <table>
+                      <thead><tr><th>Title</th><th>Section</th><th>Course</th><th>Duration</th><th>Actions</th></tr></thead>
+                      <tbody>
+                        {videos.map(function(v) {
+                          var sec = sections.find(function(s){return s.id===v.section_id;});
+                          var course = sec ? courses.find(function(c){return c.id===sec.course_id;}) : null;
+                          return (
+                            <tr key={v.id}>
+                              <td style={{fontWeight:600}}>{v.title}</td>
+                              <td style={{color:"var(--muted)"}}>{sec ? sec.title : "—"}</td>
+                              <td style={{color:"var(--muted)"}}>{course ? course.title : "—"}</td>
+                              <td style={{color:"var(--muted)"}}>{v.duration || "—"}</td>
+                              <td><div className="act-row"><button className="bsm b-edit" onClick={function(){openModal("video",v);}}>Edit</button><button className="bsm b-del" onClick={function(){deleteItem("videos",v.id);}}>Delete</button></div></td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                    {videos.length === 0 && <div className="empty"><div style={{fontSize:32,marginBottom:10}}>🎬</div><div>No videos yet.</div></div>}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </main>
+
+      {modal && (
+        <div className="modal-ov" onClick={function(e){if(e.target===e.currentTarget){setModal(null);setForm({});}}}>
+          <div className="modal">
+            <div className="modal-title">{modal.id ? "Edit" : "Add"} {modal.type.charAt(0).toUpperCase()+modal.type.slice(1)}</div>
+
+            {modal.type === "course" && (
+              <div>
+                <div className="fg"><label className="fl">Course Title</label><input className="fi" value={form.title||""} onChange={function(e){setForm(Object.assign({},form,{title:e.target.value}));}} placeholder="e.g. Beginner Foundation"/></div>
+                <div className="fg"><label className="fl">Description</label><textarea className="fta" style={{minHeight:70}} value={form.description||""} onChange={function(e){setForm(Object.assign({},form,{description:e.target.value}));}}/></div>
+                <div className="fg"><label className="fl">Access Level</label><select className="fsel" value={form.level||"beginner"} onChange={function(e){setForm(Object.assign({},form,{level:e.target.value}));}}><option value="beginner">Beginner</option><option value="advanced">Advanced</option></select></div>
+                <div className="fg"><label className="fl">Emoji Icon</label><input className="fi" value={form.emoji||""} onChange={function(e){setForm(Object.assign({},form,{emoji:e.target.value}));}} placeholder="📈"/></div>
+              </div>
+            )}
+
+            {modal.type === "section" && (
+              <div>
+                <div className="fg"><label className="fl">Section Title</label><input className="fi" value={form.title||""} onChange={function(e){setForm(Object.assign({},form,{title:e.target.value}));}} placeholder="e.g. Module 1: Market Basics"/></div>
+                <div className="fg"><label className="fl">Course</label>
+                  <select className="fsel" value={form.course_id||""} onChange={function(e){setForm(Object.assign({},form,{course_id:e.target.value}));}}>
+                    <option value="">— Select Course —</option>
+                    {courses.map(function(c){return <option key={c.id} value={c.id}>{c.title}</option>;})}
+                  </select>
+                </div>
+              </div>
+            )}
+
+            {modal.type === "video" && (
+              <div>
+                <div className="fg"><label className="fl">Lesson Title</label><input className="fi" value={form.title||""} onChange={function(e){setForm(Object.assign({},form,{title:e.target.value}));}} placeholder="e.g. Understanding Candlesticks"/></div>
+                <div className="fg"><label className="fl">Section</label>
+                  <select className="fsel" value={form.section_id||""} onChange={function(e){setForm(Object.assign({},form,{section_id:e.target.value}));}}>
+                    <option value="">— Select Section —</option>
+                    {sections.map(function(s){
+                      var c = courses.find(function(x){return x.id===s.course_id;});
+                      return <option key={s.id} value={s.id}>{c ? c.title+" > " : ""}{s.title}</option>;
+                    })}
+                  </select>
+                </div>
+                <div className="fg">
+                  <label className="fl">Bunny.net Embed Code</label>
+                  <textarea className="fta" style={{minHeight:100,fontFamily:"monospace",fontSize:11}} value={form.embed_code||""} onChange={function(e){setForm(Object.assign({},form,{embed_code:e.target.value}));}} placeholder="Paste full Bunny.net iframe embed code here"/>
+                  <div style={{fontSize:11,color:"var(--muted)",marginTop:6}}>Bunny.net > Stream > your video > Share > Embed > copy full iframe</div>
+                </div>
+                <div className="fg"><label className="fl">Duration (e.g. 12:30)</label><input className="fi" value={form.duration||""} onChange={function(e){setForm(Object.assign({},form,{duration:e.target.value}));}} placeholder="00:00"/></div>
+                <div className="fg"><label className="fl">Description (optional)</label><textarea className="fta" style={{minHeight:60}} value={form.description||""} onChange={function(e){setForm(Object.assign({},form,{description:e.target.value}));}}/></div>
+              </div>
+            )}
+
+            <div className="modal-acts">
+              <button className="b-cancel" onClick={function(){setModal(null);setForm({});}}>Cancel</button>
+              <button className="b-save" onClick={saveModal}>Save</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
-const PLAYBOOK=[{section:"Risk Management",rules:["Never risk more than 1–2% of your account on a single trade.","Set your stop loss before you enter — not after.","If you hit your daily loss limit, stop trading immediately.","Risk/reward ratio must be minimum 1:2 before any trade.","Never move a stop loss to break-even too early."]},{section:"Trade Execution",rules:["Only enter trades that match your pre-defined setup criteria.","Wait for confirmation — never anticipate without price action proof.","Trade with the trend on higher timeframes.","Avoid trading during major news events.","Close partials at key resistance/support levels."]},{section:"Mindset & Discipline",rules:["A losing trade does not make you a bad trader — breaking rules does.","Do not revenge trade after a loss. Take a break, review, reset.","The market will always be there tomorrow. Patience is your edge.","Document every trade.","Your job is not to predict the market, it is to react to it."]},{section:"Session Planning",rules:["Review your watchlist the night before every session.","Mark key levels on H4 and D1 charts.","Define your bias before price opens.","Set your risk parameters before the market opens."]}];
-function PlaybookPage(){return(<div className="page"><div style={{marginBottom:28}}><h2 className="cinzel" style={{fontSize:18,fontWeight:700,letterSpacing:".08em",marginBottom:6}}>Trading Playbook</h2><p style={{color:"var(--muted)",fontSize:13}}>Core principles that define a professional DDP trader.</p></div>{PLAYBOOK.map((block,i)=>(<div key={i} className="playbook-section"><div className="playbook-section-title">{block.section}</div>{block.rules.map((rule,j)=><div key={j} className="playbook-rule"><div className="rule-num">{String(j+1).padStart(2,"0")}</div><div className="rule-text">{rule}</div></div>)}</div>))}</div>);}
-function DashboardPage({user}){
-  const name=user.profile?.full_name||user.email?.split("@")[0]||"Trader";const level=user.profile?.membership_level||"beginner";const hr=new Date().getHours();const greeting=hr<12?"Good morning":hr<17?"Good afternoon":"Good evening";
-  return(<div className="page"><div style={{marginBottom:32}}><p style={{color:"var(--muted)",fontSize:13,marginBottom:6}}>{greeting},</p><h2 className="cinzel" style={{fontSize:22,fontWeight:700,letterSpacing:".06em",marginBottom:10}}>{name}</h2><Badge level={level}/></div><div className="stats-grid" style={{marginBottom:32}}><div className="stat-card"><div className="stat-label">Membership</div><div className="stat-value" style={{fontSize:20,textTransform:"capitalize"}}>{level}</div><div style={{fontSize:11,color:"var(--muted)",marginTop:4}}>Active access</div></div><div className="stat-card"><div className="stat-label">Member Since</div><div className="stat-value" style={{fontSize:18}}>{fmt(user.profile?.created_at)}</div></div></div><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:16}}>{[{icon:"📚",title:"Courses",desc:"Access your curriculum and video lessons."},{icon:"📓",title:"Journal",desc:"Document your trades and reflections daily."},{icon:"📋",title:"Checklist",desc:"Track your progress through key milestones."},{icon:"📖",title:"Playbook",desc:"Core trading rules and principles."}].map(card=>(<div key={card.title} className="card" style={{display:"flex",gap:14,alignItems:"flex-start"}}><span style={{fontSize:24}}>{card.icon}</span><div><div className="cinzel" style={{fontSize:13,fontWeight:600,marginBottom:4}}>{card.title}</div><div style={{fontSize:12,color:"var(--muted)",lineHeight:1.6}}>{card.desc}</div></div></div>))}</div></div>);
+
+function CoursesPage(props) {
+  var userLevel = props.userLevel;
+  var [courses, setCourses] = useState([]);
+  var [selected, setSelected] = useState(null);
+  var [sections, setSections] = useState([]);
+  var [videos, setVideos] = useState([]);
+  var [activeVideo, setActiveVideo] = useState(null);
+  var [openSecs, setOpenSecs] = useState({});
+  var [loading, setLoading] = useState(true);
+
+  useEffect(function() {
+    sb.from("courses").select("*").order("order_index").then(function(r){ setCourses(r.data||[]); setLoading(false); });
+  }, []);
+
+  async function openCourse(course) {
+    setSelected(course);
+    var sr = await sb.from("sections").select("*").eq("course_id",course.id).order("order_index");
+    var secs = sr.data || [];
+    setSections(secs);
+    if (secs.length) {
+      var vr = await sb.from("videos").select("*").in("section_id", secs.map(function(x){return x.id;})).order("order_index");
+      var vids = vr.data || [];
+      setVideos(vids);
+      if (vids.length) setActiveVideo(vids[0]);
+    }
+    var open = {};
+    secs.forEach(function(s){ open[s.id] = true; });
+    setOpenSecs(open);
+  }
+
+  function canAccess(c) { return userLevel === "advanced" || c.level === "beginner"; }
+
+  if (loading) return <div className="page"><div style={{color:"var(--muted)",textAlign:"center",padding:60}}>Loading courses...</div></div>;
+
+  if (selected) return (
+    <div className="page">
+      <div style={{display:"inline-flex",alignItems:"center",gap:6,color:"var(--muted)",fontSize:12,cursor:"pointer",marginBottom:24}} onClick={function(){setSelected(null);setActiveVideo(null);}}>&#8592; Back to Courses</div>
+      <div style={{marginBottom:24}}>
+        <h2 style={{fontFamily:""Cinzel",serif",fontSize:18,fontWeight:700,letterSpacing:".06em",marginBottom:6}}>{selected.title}</h2>
+        <Badge level={selected.level}/>
+      </div>
+      <div className="two-col">
+        <div>
+          <div className="vid-area">
+            {activeVideo && activeVideo.embed_code
+              ? <div style={{width:"100%",height:"100%"}} dangerouslySetInnerHTML={{__html:activeVideo.embed_code}}/>
+              : <div className="vid-ph"><div className="vid-ph-icon">&#9654;</div><p style={{fontSize:13}}>{activeVideo ? "No embed code set." : "Select a lesson to begin."}</p></div>
+            }
+          </div>
+          {activeVideo && (
+            <div>
+              <h3 style={{fontFamily:""Cinzel",serif",fontSize:14,fontWeight:600,marginBottom:6}}>{activeVideo.title}</h3>
+              {activeVideo.description && <p style={{color:"var(--muted)",fontSize:13,lineHeight:1.7}}>{activeVideo.description}</p>}
+            </div>
+          )}
+        </div>
+        <div>
+          <div style={{fontFamily:""Cinzel",serif",fontSize:11,letterSpacing:".1em",textTransform:"uppercase",color:"var(--muted)",marginBottom:12}}>Course Content</div>
+          {sections.map(function(sec) {
+            var lessons = videos.filter(function(v){return v.section_id===sec.id;});
+            var isOpen = openSecs[sec.id];
+            return (
+              <div key={sec.id} className="sec-item">
+                <div className="sec-hdr" onClick={function(){var o=Object.assign({},openSecs);o[sec.id]=!o[sec.id];setOpenSecs(o);}}>
+                  <div>
+                    <div className="sec-title">{sec.title}</div>
+                    <div style={{fontSize:11,color:"var(--muted)",marginTop:2}}>{lessons.length} lesson{lessons.length!==1?"s":""}</div>
+                  </div>
+                  <span className={"chev" + (isOpen ? " chev-open" : "")}>&#9660;</span>
+                </div>
+                {isOpen && (
+                  <div className="sec-lessons">
+                    {lessons.map(function(v) {
+                      return (
+                        <div key={v.id} className={"lesson" + (activeVideo && activeVideo.id===v.id ? " lesson-active" : "")} onClick={function(){setActiveVideo(v);}}>
+                          <span style={{color:"var(--muted)",fontSize:12,width:16,textAlign:"center"}}>{activeVideo && activeVideo.id===v.id ? "▶" : "○"}</span>
+                          <span className="lesson-title">{v.title}</span>
+                          {v.duration && <span className="lesson-dur">{v.duration}</span>}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="page">
+      <div style={{marginBottom:28}}>
+        <h2 style={{fontFamily:""Cinzel",serif",fontSize:18,fontWeight:700,letterSpacing:".08em",marginBottom:6}}>Courses</h2>
+        <p style={{color:"var(--muted)",fontSize:13}}>{userLevel==="beginner" ? "Beginner courses available to you." : "All courses available."}</p>
+      </div>
+      {courses.length === 0 && <div className="empty"><div style={{fontSize:36,marginBottom:10}}>📚</div><div>No courses published yet.</div></div>}
+      <div className="courses-grid">
+        {courses.map(function(course) {
+          var locked = !canAccess(course);
+          return (
+            <div key={course.id} className="course-card" style={locked?{opacity:.4,cursor:"not-allowed"}:{}} onClick={function(){if(!locked)openCourse(course);}}>
+              <div className={"cthumb " + (course.level==="advanced" ? "cthumb-a" : "cthumb-b")}>
+                <span>{course.emoji || (course.level==="advanced" ? "📊" : "📈")}</span>
+                {locked && <span style={{position:"absolute",top:10,left:10,fontSize:16}}>🔒</span>}
+              </div>
+              <div className="cbody">
+                <div className="ctitle">{course.title}</div>
+                <div className="cmeta">{course.description}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
-function MemberPortal({user,onLogout}){
-  const [page,setPage]=useState("dashboard");const level=user.profile?.membership_level||"beginner";
-  const NAV=[{id:"dashboard",icon:"◈",label:"Dashboard"},{id:"courses",icon:"▣",label:"Courses"},{id:"journal",icon:"◎",label:"Journal"},{id:"checklist",icon:"✦",label:"Checklist"},{id:"playbook",icon:"◉",label:"Playbook"}];
-  const TITLES={dashboard:"Dashboard",courses:"Courses",journal:"Trading Journal",checklist:"Trader Checklist",playbook:"Playbook"};
-  return(<div className="app-shell"><aside className="sidebar"><div className="sidebar-logo"><div class="text-logo"><span class="tl-ddp">DDP</span><span class="tl-fx">FOREX INSTITUTE</span></div></div><div className="sidebar-section-label">Menu</div>{NAV.map(n=><div key={n.id} className={} onClick={()=>setPage(n.id)}><span className="icon">{n.icon}</span>{n.label}</div>)}<div className="sidebar-footer"><Badge level={level}/><div className="user-name">{user.profile?.full_name||"Trader"}</div><div className="user-email">{user.email}</div><button className="btn-logout" onClick={onLogout}>Sign Out</button></div></aside><main className="main"><div className="topbar"><h2>{TITLES[page]}</h2><Badge level={level}/></div>{page==="dashboard"&&<DashboardPage user={user}/>}{page==="courses"&&<CoursesPage userLevel={level}/>}{page==="journal"&&<JournalPage userId={user.id}/>}{page==="checklist"&&<ChecklistPage userId={user.id}/>}{page==="playbook"&&<PlaybookPage/>}</main></div>);
+
+function JournalPage(props) {
+  var userId = props.userId;
+  var [entries, setEntries] = useState([]);
+  var [text, setText] = useState("");
+  var [loading, setLoading] = useState(true);
+  var [saving, setSaving] = useState(false);
+
+  useEffect(function() {
+    sb.from("journal_entries").select("*").eq("user_id",userId).order("created_at",{ascending:false}).then(function(r){setEntries(r.data||[]);setLoading(false);});
+  }, [userId]);
+
+  async function save() {
+    if (!text.trim()) return; setSaving(true);
+    await sb.from("journal_entries").insert({user_id:userId, content:text, created_at:new Date().toISOString()});
+    setText("");
+    var r = await sb.from("journal_entries").select("*").eq("user_id",userId).order("created_at",{ascending:false});
+    setEntries(r.data||[]); setSaving(false);
+  }
+
+  async function del(id) {
+    if (!window.confirm("Delete this entry?")) return;
+    await sb.from("journal_entries").delete().eq("id",id);
+    setEntries(entries.filter(function(e){return e.id!==id;}));
+  }
+
+  return (
+    <div className="page">
+      <div style={{marginBottom:28}}>
+        <h2 style={{fontFamily:""Cinzel",serif",fontSize:18,fontWeight:700,letterSpacing:".08em",marginBottom:6}}>Trading Journal</h2>
+        <p style={{color:"var(--muted)",fontSize:13}}>Document your trades, reflections and learning.</p>
+      </div>
+      <div className="card" style={{marginBottom:24}}>
+        <div className="card-title">New Entry</div>
+        <textarea className="fta" value={text} onChange={function(e){setText(e.target.value);}} placeholder="What did you observe today? What trades did you take? What did you learn?" style={{minHeight:130}}/>
+        <div style={{display:"flex",justifyContent:"flex-end",marginTop:12}}>
+          <button className="b-add" disabled={saving||!text.trim()} onClick={save}>{saving ? "Saving..." : "+ Save Entry"}</button>
+        </div>
+      </div>
+      {loading ? <div style={{color:"var(--muted)",textAlign:"center",padding:40}}>Loading...</div> : (
+        entries.length === 0
+          ? <div className="empty"><div style={{fontSize:32,marginBottom:10}}>📓</div><div>No entries yet.</div></div>
+          : entries.map(function(e) {
+            return (
+              <div key={e.id} className="jentry">
+                <div style={{display:"flex",justifyContent:"space-between",marginBottom:8}}>
+                  <div className="jdate">{fmt(e.created_at)}</div>
+                  <button className="bsm b-del" onClick={function(){del(e.id);}}>Delete</button>
+                </div>
+                <div className="jtext">{e.content}</div>
+              </div>
+            );
+          })
+      )}
+    </div>
+  );
 }
-function App(){
-  const [user,setUser]=useState(null);const [loading,setLoading]=useState(true);const [mode,setMode]=useState("member");
-  useEffect(()=>{sb.auth.getSession().then(async({data:{session}})=>{if(session){const{data:profile}=await sb.from("users").select("*").eq("id",session.user.id).single();const u={...session.user,profile:profile||{}};setUser(u);if(profile?.is_admin)setMode("admin");}setLoading(false);});const{data:{subscription}}=sb.auth.onAuthStateChange(async(_,session)=>{if(session){const{data:profile}=await sb.from("users").select("*").eq("id",session.user.id).single();setUser({...session.user,profile:profile||{}});}else setUser(null);});return()=>subscription.unsubscribe();},[]);
-  async function logout(){await sb.auth.signOut();setUser(null);setMode("member");}
-  if(loading)return(<div style={{height:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",background:"var(--bg)",gap:16}}><div class="text-logo large"><span class="tl-ddp">DDP</span><span class="tl-fx">FOREX INSTITUTE</span></div></div>);
-  if(mode==="admin-login"&&!user)return <AdminLoginPage onLogin={u=>{setUser(u);setMode("admin");}}/>;
-  if(mode==="admin"&&user?.profile?.is_admin)return <AdminPanel adminUser={user} onLogout={logout}/>;
-  if(!user)return <AuthPage onLogin={u=>{setUser(u);if(u.profile?.is_admin)setMode("admin");}} goAdmin={()=>setMode("admin-login")}/>;
-  const status=user.profile?.status;
-  if(status==="declined")return(<div className="pending-screen"><div className="pending-card"><div class="text-logo" style={{marginBottom:16}}><span class="tl-ddp">DDP</span><span class="tl-fx">FOREX INSTITUTE</span></div><div style={{fontSize:32}}>✗</div><h2 className="pending-title cinzel">Access Declined</h2><p className="pending-text">Your application was declined. Please contact support.</p><button className="btn-logout" style={{marginTop:28}} onClick={logout}>Sign Out</button></div></div>);
-  if(status!=="active")return <PendingScreen user={user} onLogout={logout}/>;
+
+var CHECKLIST = ["Set up your trading account with a broker","Complete the Beginner Foundation course","Paper trade for at least 30 days","Document your first 10 journal entries","Define your personal risk tolerance","Learn to read candlestick patterns","Understand support and resistance levels","Master the 3 core DDP entry models","Build and backtest your trading plan","Complete 60 days without breaking your rules"];
+
+function ChecklistPage(props) {
+  var userId = props.userId;
+  var [checked, setChecked] = useState({});
+  var [loading, setLoading] = useState(true);
+
+  useEffect(function() {
+    sb.from("checklists").select("*").eq("user_id",userId).single().then(function(r){
+      if (r.data && r.data.items) setChecked(r.data.items);
+      setLoading(false);
+    });
+  }, [userId]);
+
+  async function toggle(idx) {
+    var next = Object.assign({}, checked);
+    next[idx] = !next[idx];
+    setChecked(next);
+    var r = await sb.from("checklists").select("id").eq("user_id",userId).single();
+    if (r.data) await sb.from("checklists").update({items:next}).eq("user_id",userId);
+    else await sb.from("checklists").insert({user_id:userId, items:next});
+  }
+
+  var done = Object.values(checked).filter(Boolean).length;
+  var pct = Math.round((done / CHECKLIST.length) * 100);
+
+  return (
+    <div className="page">
+      <div style={{marginBottom:28}}>
+        <h2 style={{fontFamily:""Cinzel",serif",fontSize:18,fontWeight:700,letterSpacing:".08em",marginBottom:6}}>Trader Checklist</h2>
+        <p style={{color:"var(--muted)",fontSize:13}}>{done} of {CHECKLIST.length} milestones completed ({pct}%)</p>
+      </div>
+      <div style={{height:4,background:"var(--bg3)",borderRadius:4,marginBottom:28,overflow:"hidden"}}>
+        <div style={{width:pct+"%",height:"100%",background:"var(--green)",borderRadius:4,transition:"width .4s"}}/>
+      </div>
+      {loading ? <div style={{color:"var(--muted)",textAlign:"center",padding:40}}>Loading...</div> : (
+        CHECKLIST.map(function(item, idx) {
+          return (
+            <div key={idx} className="clitem" onClick={function(){toggle(idx);}}>
+              <div className={"chkbox" + (checked[idx] ? " chkbox-on" : "")}>{checked[idx] ? "✓" : ""}</div>
+              <div className={"cltext" + (checked[idx] ? " cltext-done" : "")}>{item}</div>
+            </div>
+          );
+        })
+      )}
+    </div>
+  );
+}
+
+var PLAYBOOK = [
+  {section:"Risk Management",rules:["Never risk more than 1-2% of your account on a single trade.","Set your stop loss before you enter - not after.","If you hit your daily loss limit, stop trading immediately.","Risk/reward ratio must be minimum 1:2 before any trade.","Never move a stop loss to break-even too early."]},
+  {section:"Trade Execution",rules:["Only enter trades that match your pre-defined setup criteria.","Wait for confirmation - never anticipate without price action proof.","Trade with the trend on higher timeframes.","Avoid trading during major news events.","Close partials at key resistance/support levels."]},
+  {section:"Mindset & Discipline",rules:["A losing trade does not make you a bad trader - breaking rules does.","Do not revenge trade after a loss. Take a break, review, reset.","The market will always be there tomorrow. Patience is your edge.","Document every trade.","Your job is not to predict the market, it is to react to it."]},
+  {section:"Session Planning",rules:["Review your watchlist the night before every session.","Mark key levels on H4 and D1 charts.","Define your bias before price opens.","Set your risk parameters before the market opens."]}
+];
+
+function PlaybookPage() {
+  return (
+    <div className="page">
+      <div style={{marginBottom:28}}>
+        <h2 style={{fontFamily:""Cinzel",serif",fontSize:18,fontWeight:700,letterSpacing:".08em",marginBottom:6}}>Trading Playbook</h2>
+        <p style={{color:"var(--muted)",fontSize:13}}>Core principles that define a professional DDP trader.</p>
+      </div>
+      {PLAYBOOK.map(function(block, i) {
+        return (
+          <div key={i} className="pb-sec">
+            <div className="pb-hdr">{block.section}</div>
+            {block.rules.map(function(rule, j) {
+              return <div key={j} className="pb-rule"><div className="pb-num">{j<9?"0":""}  {j+1}</div><div className="pb-text">{rule}</div></div>;
+            })}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function DashboardPage(props) {
+  var user = props.user;
+  var name = (user.profile && user.profile.full_name) ? user.profile.full_name : (user.email ? user.email.split("@")[0] : "Trader");
+  var level = (user.profile && user.profile.membership_level) ? user.profile.membership_level : "beginner";
+  var hr = new Date().getHours();
+  var greeting = hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening";
+  return (
+    <div className="page">
+      <div style={{marginBottom:32}}>
+        <p style={{color:"var(--muted)",fontSize:13,marginBottom:6}}>{greeting},</p>
+        <h2 style={{fontFamily:""Cinzel",serif",fontSize:22,fontWeight:700,letterSpacing:".06em",marginBottom:10}}>{name}</h2>
+        <Badge level={level}/>
+      </div>
+      <div className="stats-grid" style={{marginBottom:32}}>
+        <div className="stat-card"><div className="stat-label">Membership</div><div className="stat-val" style={{fontSize:20,textTransform:"capitalize"}}>{level}</div><div style={{fontSize:11,color:"var(--muted)",marginTop:4}}>Active access</div></div>
+        <div className="stat-card"><div className="stat-label">Member Since</div><div className="stat-val" style={{fontSize:18}}>{fmt(user.profile && user.profile.created_at ? user.profile.created_at : null)}</div></div>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:16}}>
+        {[{icon:"📚",title:"Courses",desc:"Access your curriculum and video lessons."},{icon:"📓",title:"Journal",desc:"Document your trades and reflections daily."},{icon:"📋",title:"Checklist",desc:"Track your progress through key milestones."},{icon:"📖",title:"Playbook",desc:"Core trading rules and principles."}].map(function(card) {
+          return (
+            <div key={card.title} className="card" style={{display:"flex",gap:14,alignItems:"flex-start"}}>
+              <span style={{fontSize:24}}>{card.icon}</span>
+              <div>
+                <div style={{fontFamily:""Cinzel",serif",fontSize:13,fontWeight:600,marginBottom:4}}>{card.title}</div>
+                <div style={{fontSize:12,color:"var(--muted)",lineHeight:1.6}}>{card.desc}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function MemberPortal(props) {
+  var user = props.user;
+  var [page, setPage] = useState("dashboard");
+  var level = (user.profile && user.profile.membership_level) ? user.profile.membership_level : "beginner";
+  var NAV = [{id:"dashboard",icon:"◈",label:"Dashboard"},{id:"courses",icon:"▣",label:"Courses"},{id:"journal",icon:"◎",label:"Journal"},{id:"checklist",icon:"✦",label:"Checklist"},{id:"playbook",icon:"◉",label:"Playbook"}];
+  var TITLES = {dashboard:"Dashboard",courses:"Courses",journal:"Trading Journal",checklist:"Trader Checklist",playbook:"Playbook"};
+  return (
+    <div className="app-shell">
+      <aside className="sidebar">
+        <Logo/>
+        <div className="sidebar-label">Menu</div>
+        {NAV.map(function(n) {
+          return <div key={n.id} className={"nav-item"+(page===n.id?" nav-item-active":"")} onClick={function(){setPage(n.id);}}><span style={{width:16,textAlign:"center"}}>{n.icon}</span>{n.label}</div>;
+        })}
+        <div className="sidebar-footer">
+          <Badge level={level}/>
+          <div className="uname">{user.profile && user.profile.full_name ? user.profile.full_name : "Trader"}</div>
+          <div className="uemail">{user.email}</div>
+          <button className="btn-logout" onClick={props.onLogout}>Sign Out</button>
+        </div>
+      </aside>
+      <main className="main">
+        <div className="topbar">
+          <h2>{TITLES[page]}</h2>
+          <Badge level={level}/>
+        </div>
+        {page==="dashboard" && <DashboardPage user={user}/>}
+        {page==="courses" && <CoursesPage userLevel={level}/>}
+        {page==="journal" && <JournalPage userId={user.id}/>}
+        {page==="checklist" && <ChecklistPage userId={user.id}/>}
+        {page==="playbook" && <PlaybookPage/>}
+      </main>
+    </div>
+  );
+}
+
+function App() {
+  var [user, setUser] = useState(null);
+  var [loading, setLoading] = useState(true);
+  var [mode, setMode] = useState("member");
+
+  useEffect(function() {
+    sb.auth.getSession().then(async function(r) {
+      var session = r.data.session;
+      if (session) {
+        var pr = await sb.from("users").select("*").eq("id",session.user.id).single();
+        var u = Object.assign({}, session.user, {profile: pr.data || {}});
+        setUser(u);
+        if (pr.data && pr.data.is_admin) setMode("admin");
+      }
+      setLoading(false);
+    });
+    var sub = sb.auth.onAuthStateChange(async function(_, session) {
+      if (session) {
+        var pr = await sb.from("users").select("*").eq("id",session.user.id).single();
+        setUser(Object.assign({}, session.user, {profile: pr.data || {}}));
+      } else { setUser(null); }
+    });
+    return function(){ if (sub.data && sub.data.subscription) sub.data.subscription.unsubscribe(); };
+  }, []);
+
+  async function logout() {
+    await sb.auth.signOut();
+    setUser(null); setMode("member");
+  }
+
+  if (loading) return (
+    <div style={{height:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",background:"var(--bg)",gap:8}}>
+      <span className="logo-ddp" style={{fontSize:42}}>DDP</span>
+      <span className="logo-sub" style={{fontSize:12}}>FOREX INSTITUTE</span>
+    </div>
+  );
+
+  if (mode === "admin-login" && !user) return <AdminLoginPage onLogin={function(u){setUser(u);setMode("admin");}} goMember={function(){setMode("member");}}/>;
+  if (mode === "admin" && user && user.profile && user.profile.is_admin) return <AdminPanel adminUser={user} onLogout={logout}/>;
+  if (!user) return <AuthPage onLogin={function(u){setUser(u);if(u.profile&&u.profile.is_admin)setMode("admin");}} goAdmin={function(){setMode("admin-login");}}/>;
+
+  var status = user.profile ? user.profile.status : "pending";
+
+  if (status === "declined") return (
+    <div className="pend-page">
+      <div className="pend-card">
+        <span className="logo-ddp">DDP</span>
+        <span className="logo-sub">Forex Institute</span>
+        <div style={{fontSize:32,marginTop:16}}>&#10007;</div>
+        <h2 className="pend-title">Access Declined</h2>
+        <p className="pend-text">Your application was declined. Please contact support.</p>
+        <button className="btn-logout" style={{marginTop:28}} onClick={logout}>Sign Out</button>
+      </div>
+    </div>
+  );
+
+  if (status !== "active") return <PendingScreen user={user} onLogout={logout}/>;
   return <MemberPortal user={user} onLogout={logout}/>;
 }
+
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script>
 </body>
